@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dominando n8n: Guía Interactiva</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h3><i class="fas fa-network-wired"></i> Dominando n8n</h3>
+            </div>
+            <ul>
+                <li><a href="#" class="nav-link active" data-target="home"><i class="fas fa-home fa-fw"></i> Inicio</a></li>
+                <li><a href="#" class="nav-link" data-target="modulo1"><i class="fas fa-book-open fa-fw"></i> Módulo 1: Fundamentos</a></li>
+                <li><a href="#" class="nav-link" data-target="modulo2"><i class="fas fa-magic-wand-sparkles fa-fw"></i> Módulo 2: Tu Primer Workflow</a></li>
+                <li><a href="#" class="nav-link" data-target="modulo3"><i class="fas fa-brain fa-fw"></i> Módulo 3: El Concepto Clave (Items)</a></li>
+                <li><a href="#" class="nav-link" data-target="modulo4"><i class="fas fa-rocket fa-fw"></i> Módulo 4: Casos Avanzados</a></li>
+                <li><a href="#" class="nav-link" data-target="modulo5"><i class="fas fa-lightbulb fa-fw"></i> Módulo 5: Recursos</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+
+            <section id="home" class="content-section active">
+                <div class="visual-banner">
+                    <h1>Automatiza tu trabajo. <strong>Aprende n8n.</strong></h1>
+                    <p class="subtitle">La guía práctica y visual para conectar tus apps y crear flujos de trabajo sin límites.</p>
+                </div>
+                
+                <h2>¿Qué es n8n y por qué debería importarte?</h2>
+                <div class="columns-3">
+                    <div class="card">
+                        <i class="fas fa-plug-circle-check card-icon"></i>
+                        <h3>¿Qué es?</h3>
+                        <p>n8n es una herramienta de "automatización de flujos de trabajo". Piensa en ello como un LEGO digital: te permite conectar cientos de aplicaciones.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-server card-icon"></i>
+                        <h3>¿Por qué es especial?</h3>
+                        <p>A diferencia de otras, n8n es "source-available". Puedes usar su Cloud o instalarlo en tu propio servidor (Self-Hosted), dándote control total.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-object-group card-icon"></i>
+                        <h3>¿Cómo funciona?</h3>
+                        <p>Todo se basa en un lienzo visual. Arrastras "Nodos" (acciones) y los conectas con "fideos" (conexiones) para decirle a n8n qué hacer.</p>
+                    </div>
+                </div>
+
+                <h2>Lo que construirás con esta guía</h2>
+                <p>No solo leerás, <strong>harás</strong>. Empezaremos fácil y terminaremos construyendo automatizaciones potentes.</p>
+                <ul class="project-list">
+                    <li><i class="fas fa-check-circle"></i> <strong>Proyecto 1: El Notificador.</strong> (Google Sheets ➔ Slack)</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Proyecto 2: El Agregador de Noticias.</strong> (RSS ➔ Email)</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Proyecto 3: Tu propia Mini-API.</strong> (Webhook ➔ Código)</li>
+                </ul>
+            </section>
+
+            <section id="modulo1" class="content-section">
+                <h1><i class="fas fa-book-open"></i> Módulo 1: Conceptos Fundamentales</h1>
+                
+                <h2>1.1 El Tour de la Interfaz</h2>
+                <div class="visual-placeholder">
+                    [Ilustración de la interfaz de n8n con anotaciones]
+                </div>
+                <ol>
+                    <li><strong>El Lienzo (Canvas):</strong> El gran espacio blanco donde construyes.</li>
+                    <li><strong>El Panel de Nodos:</strong> A la derecha. Tu caja de herramientas.</li>
+                    <li><strong>El Panel de Configuración:</strong> A la izquierda. Los detalles de cada nodo.</li>
+                    <li><strong>Botones de Ejecución:</strong> Abajo a la izquierda. El "Play" para probar.</li>
+                    <li><strong>Activo/Inactivo:</strong> Arriba a la derecha. El interruptor para "encender" tu automatización.</li>
+                </ol>
+
+                <hr>
+
+                <h2>1.2 Los 4 Pilares de n8n</h2>
+                
+                <div class="card-deck">
+                    <div class="card">
+                        <h3>1. Workflows</h3>
+                        <p>El proyecto completo. Un lienzo y todos los nodos que contiene. Un workflow = una automatización.</p>
+                    </div>
+                    <div class="card">
+                        <h3>2. Nodos (Nodes)</h3>
+                        <p>El bloque de construcción. Cada nodo es una <strong>acción</strong> (ej. "Enviar Email", "Leer Fila"). Se dividen en <strong>Triggers</strong> (inicio) y <strong>Acciones</strong> (trabajo).</p>
+                    </div>
+                    <div class="card">
+                        <h3>3. Conexiones ("Noodles")</h3>
+                        <p>Las líneas que conectas entre los nodos. Definen el <strong>orden</strong> y <strong>pasan los datos</strong> del nodo anterior al siguiente.</p>
+                    </div>
+                    <div class="card">
+                        <h3>4. Credenciales</h3>
+                        <p>El "llavero" de n8n. Es donde guardas, de forma segura, tus contraseñas y claves de API para no tener que escribirlas en cada nodo.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="modulo2" class="content-section">
+                <h1><i class="fas fa-magic-wand-sparkles"></i> Módulo 2: ¡A construir!</h1>
+                <p class="subtitle"><strong>Objetivo:</strong> Crear un workflow que nos avise por Slack cada vez que añadamos una nueva tarea en un Google Sheet.</p>
+
+                <h2>2.1 Paso 0: Preparar nuestro Google Sheet</h2>
+                <p>Crea un Google Sheet con 3 columnas: <strong>Tarea</strong>, <strong>Prioridad</strong>, <strong>Estado</strong>.</p>
+                <div class="visual-placeholder small">
+                    [Captura de pantalla simple de un Google Sheet]
+                </div>
+
+                <h2>2.2 Paso 1: El Trigger (El inicio)</h2>
+                <ol>
+                    <li>En n8n, busca y añade el nodo <strong>"Google Sheets Trigger"</strong> (fíjate en el rayo ⚡).</li>
+                    <li><strong>Autenticación:</strong> En "Credential", haz clic en "Create New" e inicia sesión en Google.</li>
+                    <li><strong>Configuración:</strong> Define tu *Sheet ID*, *Sheet Name* (`Tareas`), y *Trigger On* (`On Row Added`).</li>
+                    <li>Haz clic en <strong>"Fetch Test Event"</strong>.</li>
+                    <li>Ve a tu Google Sheet y <strong>añade una fila nueva</strong>.</li>
+                    <li>Vuelve a n8n. ¡Verás que ha capturado los datos!</li>
+                </ol>
+
+                <h2>2.3 Paso 2: La Acción (La notificación)</h2>
+                <ol>
+                    <li>Haz clic en el "+" del nodo de Google Sheets y busca <strong>"Slack"</strong>.</li>
+                    <li>Autentícate con Slack creando una nueva credencial.</li>
+                    <li>Configura tu *Channel* y el campo *Message*.</li>
+                </ol>
+
+                <h2>2.4 Paso 3: Conectando los datos (Las Expresiones)</h2>
+                <p>En el campo "Message" del nodo de Slack, haz clic en el icono de "Variables" (<code>{=}</code>) o empieza a escribir <code>{{</code> para abrir el editor de expresiones.</p>
+                <p>Tu campo "Message" debería verse así:</p>
+                <pre><code>
+¡Nueva Tarea!
+Tarea: {{ $json.Tarea }}
+Prioridad: {{ $json.Prioridad }}
+Estado: {{ $json.Estado }}
+                </code></pre>
+                <blockquote>
+                    <code>{{ ... }}</code> le dice a n8n: "Busca el valor de esta variable".<br>
+                    <code>$json.Tarea</code> significa: "Del nodo anterior, coge el dato de la columna 'Tarea'".
+                </blockquote>
+
+                <h2>2.5 Paso 4: Probar y Activar</h2>
+                <ol>
+                    <li>Haz clic en "▶️ <strong>Execute Workflow</strong>" (abajo a la izquierda).</li>
+                    <li>Revisa tu Slack. ¡Deberías tener un nuevo mensaje!</li>
+                    <li><strong>¡Paso final!</strong> Arriba a la derecha, mueve el interruptor de "Inactive" a <strong>"Active"</strong>.</li>
+                    <li>Guarda tu workflow.</li>
+                </ol>
+            </section>
+
+            <section id="modulo3" class="content-section">
+                <h1><i class="fas fa-brain"></i> Módulo 3: El Concepto Clave: "Items"</h1>
+                <p class="subtitle">Esta es la parte "súper detallada". Si entiendes esto, entiendes n8n.</p>
+
+                <h2>3.1 n8n piensa en "Items"</h2>
+                <p><strong>Analogía:</strong> Piensa que los datos viajan de un nodo a otro dentro de una <strong>caja</strong>. Cada <strong>caja</strong> es un <strong>"Item"</strong>.</p>
+                <p>Dentro de cada Item, hay datos en formato <strong>JSON</strong> (pares de clave-valor).</p>
+                
+                <pre><code>
+// Ejemplo de 1 Item (el que recibimos de Google Sheets)
+{
+  "Tarea": "Comprar leche",
+  "Prioridad": "Alta",
+  "Estado": "Pendiente"
+}
+                </code></pre>
+
+                <h2>3.2 El problema: Múltiples Items</h2>
+                <p>¿Qué pasa si tu trigger (ej. "Lee un Google Sheet") <strong>devuelve 10 filas</strong> a la vez?</p>
+                <p>n8n envía <strong>10 cajas (10 Items) separadas</strong>, una detrás de otra.</p>
+                <div class="visual-placeholder">
+                    [Diagrama: 1 Nodo Google Sheet ➔ 3 Items (cajas) ➔ 1 Nodo Slack = 3 Mensajes de Slack]
+                </div>
+                <blockquote>
+                    <strong>Regla de Oro:</strong> Por defecto, un nodo de acción (como "Send Slack") se <strong>ejecutará UNA VEZ por cada ITEM</strong> que reciba.
+                </blockquote>
+
+                <h2>3.4 Manipulando Datos (Los Nodos Clave)</h2>
+                <div class="card-deck">
+                    <div class="card"><strong>Nodo "Set":</strong> Para <strong>crear, modificar o renombrar</strong> datos. Es el que más usarás.</div>
+                    <div class="card"><strong>Nodo "IF" (Condicional):</strong> Para <strong>dividir</strong> el flujo. "SI la Prioridad es 'Alta', ve a Slack. SI NO, ve a Email".</div>
+                    <div class="card"><strong>Nodo "Merge":</strong> Para <strong>combinar</strong> datos de diferentes ramas.</div>
+                    <div class="card"><strong>Nodo "Code":</strong> Para escribir <strong>JavaScript</strong> y hacer lo que quieras.</div>
+                </div>
+            </section>
+
+            <section id="modulo4" class="content-section">
+                <h1><i class="fas fa-rocket"></i> Módulo 4: Casos de Uso Avanzados</h1>
+
+                <h2>4.1 Trabajando con APIs (El Nodo HTTP Request)</h2>
+                <p>Muchos servicios no tienen un nodo dedicado. ¡No importa! Si tienen una API, puedes usar el nodo <strong>"HTTP Request"</strong>. Es un nodo genérico que te permite hacer cualquier petición web (GET, POST, PUT, DELETE).</p>
+                <div class="visual-placeholder">
+                    [Captura de pantalla de un nodo HTTP Request configurado]
+                </div>
+
+                <h2>4.2 Webhooks: n8n como receptor</h2>
+                <p>Un <strong>Webhook</strong> es una URL especial que n8n te da. Cuando cualquier otro servicio (como Stripe, GitHub) envía datos a esa URL, el workflow se <strong>dispara instantáneamente</strong>. Es mucho más eficiente que un trigger que "pregunta" cada 5 minutos.</p>
+
+                <h2>4.3 Error Handling (Gestión de Errores)</h2>
+                <p>Puedes configurar "Error Workflows". En la configuración de tu workflow, puedes decirle: "Si este workflow falla, ejecuta <strong>este otro</strong> workflow" (uno que te envíe un email de alerta, por ejemplo).</p>
+            </section>
+            
+            <section id="modulo5" class="content-section">
+                <h1><i class="fas fa-lightbulb"></i> Módulo 5: Recursos y Siguientes Pasos</h1>
+                
+                <ul class="project-list">
+                    <li><i class="fas fa-book"></i> <strong>La Documentación Oficial:</strong> Tu fuente de verdad.</li>
+                    <li><i class="fas fa-users"></i> <strong>El Foro de la Comunidad:</strong> Para buscar soluciones a problemas.</li>
+                    <li><i class="fas fa-clone"></i> <strong>n8n.io/workflows:</strong> Una biblioteca gigante de workflows pre-hechos.</li>
+                </ul>
+
+                <h2>Cheat Sheet de Expresiones</h2>
+                <p>Fragmentos útiles para usar en tus expresiones <code>{{ ... }}</code>:</p>
+                <pre><code>
+// Coge el dato 'data' del Item actual.
+{{ $json.data }}
+
+// Coge el dato 'data' del PRIMER item
+// que vino del nodo ANTERIOR.
+{{ $items(0).json.data }}
+
+// Coge el dato 'data' del nodo llamado 'MiNodoGoogleSheet'
+{{ $('MiNodoGoogleSheet').item.json.data }}
+
+// Coge el nombre de tu workflow (útil para logs).
+{{ $workflow.name }}
+                </code></pre>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

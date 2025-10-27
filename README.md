@@ -17,3 +17,4 @@ This project was born from the need for an n8n guide that was interactive and vi
 * ** JavaScript:** To manage the SPA navigation interactivity, showing and hiding sections without a page reload.
 
 ## I hope you enjoy it
+https://tomaspoles.github.io/My-first-web-for-a-friend-/
